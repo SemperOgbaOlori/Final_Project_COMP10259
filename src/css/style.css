@@ -1,0 +1,578 @@
+/* Designing overall page*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+/* Variables */
+/* Designing Header */
+.header {
+  /*position: absolute;*/
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.5s ease;
+  -webkit-animation: fade-slide-down;
+          animation: fade-slide-down;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  z-index: 999999;
+}
+
+.header.fixed {
+  background-color: #ffffff;
+  position: fixed;
+}
+
+.header .fish-name {
+  padding: 0 15px;
+}
+
+.header .fish-name a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+
+.header.fixed .fish-name a {
+  color: #000000;
+}
+
+.header .nav-toggle {
+  width: 40px;
+  height: 34px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.header.fixed .nav-toggle {
+  border-color: #000000;
+}
+
+.header .nav-toggle span {
+  height: 1px;
+  display: block;
+  width: 16px;
+  background-color: #ffffff;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.header .nav-toggle span:before,
+.header .nav-toggle span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after {
+  background-color: #000000;
+}
+
+.header .nav-toggle span:before {
+  transform: translateY(-6px);
+}
+
+.header .nav-toggle span:after {
+  transform: translateY(6px);
+}
+
+.header .nav {
+  padding: 0 15px;
+}
+
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.header .nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FF9800;
+  padding: 25px 0;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+.header.fixed .nav ul li a {
+  color: #000000;
+}
+
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover {
+  color: white;
+}
+
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  /*background-color: rgb(45, 45, 75);*/
+  color: white;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.5s ease;
+}
+
+#myBtn:hover {
+  background-color: rgb(45, 45, 75);
+}
+
+/* Variables */
+/*
+$menuTextColor: #FF9800;
+$menuTextColorHover: white;
+$buttonBackgroundColor: red;
+*/
+/*Setting Up CSS Box Model*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*Setting up HTML*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@-webkit-keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@-webkit-keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@-webkit-keyframes wipe-enter {
+  0% {
+    transform: scale(0, 0.025);
+  }
+  50% {
+    transform: scale(1, 0.025);
+  }
+}
+@keyframes wipe-enter {
+  0% {
+    transform: scale(0, 0.025);
+  }
+  50% {
+    transform: scale(1, 0.025);
+  }
+}
+/* Content transition */
+.fade-in {
+  opacity: 0;
+  transition: 500ms ease-in-out opacity;
+}
+
+.appear {
+  opacity: 1;
+}
+
+/*Setting Up Body*/
+body {
+  margin: 0;
+  line-height: 1.5;
+  background-color: #b6b4b3;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+button {
+  background-color: red;
+}
+button::after {
+  text-transform: uppercase;
+}
+
+/*Designing Container Classes*/
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* Designing Header */
+/*
+.header{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	z-index:99;
+	transition: all 0.5s ease;
+	animation: fade-slide-down;
+	animation-duration: 2s;
+}
+
+.header.fixed{
+	background-color: #ffffff;
+	position: fixed;
+}
+.header .fish-name{
+	padding:0 15px;
+}
+.header .fish-name a{
+	text-decoration: none;
+	font-size: 30px;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing:2px;
+	transition: all 0.5s ease;
+}
+.header.fixed .fish-name a{
+	color:#000000;
+}
+
+
+.header .nav-toggle{
+	width: 40px;
+	height: 34px;
+	border:1px solid #ffffff;
+	border-radius: 3px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease;
+	display: none;
+}
+.header.fixed .nav-toggle{
+   border-color: #000000;
+}
+.header .nav-toggle span{
+	height: 1px;
+	display: block;
+	width: 16px;
+	background-color: #ffffff;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.header .nav-toggle span:before,
+.header .nav-toggle span:after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	height: 1px;
+	width: 100%;
+	background-color: #ffffff;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+  background-color: #000000;
+}
+.header .nav-toggle span:before{
+	transform:translateY(-6px);
+}
+.header .nav-toggle span:after{
+	transform:translateY(6px);
+}
+
+.header .nav{
+	padding:0 15px;
+}
+.header .nav ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.header .nav ul li{
+	display: inline-block;
+	margin-left: 30px;
+}
+.header .nav ul li a{
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+	color: $menuTextColor;
+	padding:25px 0;
+	display: block;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav ul li a{
+  color:#000000;
+}
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover{
+	color: $menuTextColorHover;
+}
+
+#myBtn {
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	border: none;
+	outline: none;
+	background-color: rgb(45, 45, 75);
+	color: white; 
+	cursor: pointer; 
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 1em;
+	transition: all 0.5s ease;
+}
+
+#myBtn:hover {
+	background-color: $buttonBackgroundColor;
+}
+*/
+/* Designing Home section */
+.home-section {
+  min-height: 100vh;
+  background-image: url("../img/aqua.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 15px;
+  /* Inset box shadow as overlay */
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  /* Text formatting */
+  color: white;
+  font-size: 3em;
+  font-weight: 650;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: wipe-enter;
+          animation: wipe-enter;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+}
+
+.home-section .welcome {
+  -webkit-animation: pop-in;
+          animation: pop-in;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+/* Designing About section */
+.about-section {
+  padding: 80px 0 0;
+  width: 50%;
+  margin: auto;
+}
+
+/* Designing Prey & Predators Section */
+.predators-section {
+  padding: 80px 0 0;
+  width: 50%;
+  margin: auto;
+}
+
+/* Designing Reproduction Section */
+.reproduction-section {
+  padding: 80px 0 0;
+  width: 50%;
+  margin: auto;
+}
+
+/* Designing Fun Facts Section */
+.fun-facts-section {
+  padding: 80px 0 0;
+  width: 50%;
+  margin: auto;
+}
+
+.fun-facts-section ol li {
+  list-style-type: lower-roman;
+  margin-bottom: 0.5em;
+}
+
+/* Designing Gallery Section */
+.gallery-section {
+  padding: 80px 0 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.gallery-section .images {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.gallery-section .images .img-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-section figcaption {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1em;
+  flex-wrap: wrap;
+  width: 35em;
+  background-color: #b6b4b3;
+}
+
+.gallery-section h1 {
+  width: 100%;
+  font-size: 3.5em;
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+
+.gallery-section img {
+  margin: 0em;
+  width: 35em;
+  height: 22em;
+  border: 0.25vh solid black;
+  padding: 0;
+}
+
+.gallery-section video {
+  margin: 3em 10em;
+}
+
+#slideshow {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#closeSlide {
+  margin: auto;
+  width: 10%;
+}
+
+/* Designing World Count Section */
+.count-section {
+  padding: 80px 0 0;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.count-section caption {
+  border: 1px solid black;
+  border-bottom: 0;
+}
+
+.count-section table {
+  text-align: left;
+  border: 1px solid black;
+}
+
+.count-section table th {
+  text-align: left;
+  border: 1px solid black;
+}
+
+.count-section table td {
+  text-align: right;
+  border: 1px solid black;
+}
+
+.honesty {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.honesty ul {
+  list-style: none;
+}
+
+.honesty ol {
+  list-style: none;
+}
+
+.honesty a {
+  color: teal;
+}/*# sourceMappingURL=style.css.map */
